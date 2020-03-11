@@ -16,7 +16,7 @@ def search():
     log = {'req_time': datetime.datetime.now().strftime("%c"), \
             'keyword' : query
         }
-    res_log = requests.post("http://log:5000/log", data=log)
+    res_log = requests.post("http://log:5000/log", json=log)
     res_cat = requests.get("http://catalogue:5000/catalogue?keyword=" + query)
     r = make_response(res_cat.text, 200)
     r.mimetype = 'application/json'

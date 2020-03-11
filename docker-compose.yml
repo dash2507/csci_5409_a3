@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-    mongodb_container:
-        container_name: mongodb
-        image: mongo:4.2.3-bionic
-        expose:
-            - 27017
-        ports: 
-            - 27017:27017
+    # mongodb_container:
+    #     container_name: mongodb
+    #     image: mongo:4.2.3-bionic
+    #     expose:
+    #         - 27017
+    #     ports: 
+    #         - 27017:27017
     search:
         build: ./search
         container_name: search

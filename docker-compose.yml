@@ -14,29 +14,29 @@ services:
         restart: always
         ports: 
             - 5000:5000
-        # volumes:
-        #     - ./search:/app
+        volumes:
+            - ./search:/app
     log:
         build: ./log
         container_name: log
         restart: always
         ports: 
             - 5001:5000
-        # volumes:
-        #     - ./log:/app
+        volumes:
+            - ./log:/app
     notes:
         build: ./notes
         container_name: notes
         restart: always
         ports: 
             - 5002:5000
-        # volumes:
-        #     - ./notes:/app
+        volumes:
+            - ./notes:/app
     catalogue:
         build: ./catalogue
         container_name: catalogue
         restart: always
         ports: 
             - 5003:5000
-        # volumes:
-        #     - ./catalogue:/app
+        volumes:
+            - ./catalogue:/app

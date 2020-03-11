@@ -1,0 +1,19 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "search",
+            "image": "dash2507/a3_search",
+            "hostname": "search",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "notes",
+            "image": "dash2507/a3_notes",
+            "hostname": "notes",
+            "essential": false,
+            "memory": 128
+        }
+    ]
+}

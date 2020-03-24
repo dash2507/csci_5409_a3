@@ -31,6 +31,8 @@ def notes():
     res_notes = requests.get("http://notes:5000/notes?keyword=" + keyword)
     r = make_response(res_notes.text, 200)
     r.mimetype = 'application/json'
+    r.headers['Content-Type'] = 'application/json'
+    r.headers['Access-Control-Allow-Origin'] = '*'
     return r
 
 
@@ -42,4 +44,6 @@ def add_notes():
     res_notes = requests.post("http://notes:5000/add_note", json=req)
     r = make_response(res_notes.text, 200)
     r.mimetype = 'application/json'
+    r.headers['Content-Type'] = 'application/json'
+    r.headers['Access-Control-Allow-Origin'] = '*'
     return r

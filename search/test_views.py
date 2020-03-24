@@ -28,10 +28,10 @@ class BasicTests(unittest.TestCase):
         response = self.app.get('/', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
-    # def test_search(self):
-    #     response = self.app.get(
-    #         '/search', query_string=dict(query='The Apostolic Tradition of Hippolytus'))
-    #     self.assertEqual(response.status_code, 200)
+    def test_search(self):
+        response = self.app.get(
+            '/search', query_string=dict(query='The Apostolic Tradition of Hippolytus'))
+        self.assertEqual(response.status_code, 200)
 
     def test_notes(self):
         response = self.app.get(

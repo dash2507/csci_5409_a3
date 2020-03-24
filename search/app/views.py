@@ -20,6 +20,8 @@ def search():
     res_cat = requests.get("http://catalogue:5000/catalogue?keyword=" + query)
     r = make_response(res_cat.text, 200)
     r.mimetype = 'application/json'
+    r.headers['Content-Type'] = 'application/json'
+    r.headers['Access-Control-Allow-Origin'] = '*'
     return r
 
 

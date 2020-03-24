@@ -35,7 +35,7 @@ class BasicTests(unittest.TestCase):
     
     def test_log(self):
         response = self.app.post(
-            '/log',data=dict(req_time="12-12-2020",keyword="Test_Case"))
+            '/log',json=dict(req_time="12-12-2020",keyword="Test_Case"))
         self.assertEqual(response.status_code, 200)
 
 

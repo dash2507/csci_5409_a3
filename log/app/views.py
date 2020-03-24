@@ -12,7 +12,7 @@ def index():
 
 @app.route('/log', methods=['POST'])
 def log():
-    data = json.loads(request.get_data())
+    data = request.get_json()
     req_time = data["req_time"]
     keyword = data["keyword"]
     if not os.path.isfile('req_time.csv'):

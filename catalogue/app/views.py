@@ -14,7 +14,7 @@ def index():
 
 def fetch_data(keyword):
     db_string = 'mongodb://csciDarshan:csciDarshan123@docdb-2020-03-24-17-12-34.cluster-chnyvyrv3c0z.us-east-1.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false'
-    client = MongoClient('mongodb://mongodb:27017/')
+    client = MongoClient(db_string)
     db = client.gu_books
     doc = db.books.find_one({'title': keyword})
     if doc != None:

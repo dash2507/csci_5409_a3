@@ -1,12 +1,5 @@
 version: "3"
 services:
-  search:
-    build: ./search
-    container_name: search
-    ports:
-      - 5000:5000
-    volumes:
-      - ./search:/app
   log:
     build: ./log
     container_name: log
@@ -28,3 +21,10 @@ services:
       - 5003:5000
     volumes:
       - ./catalogue:/app
+  search:
+    build: ./search
+    container_name: search
+    ports:
+      - 5000:5000
+    volumes:
+      - ./search:/app

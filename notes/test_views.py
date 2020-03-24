@@ -23,21 +23,21 @@ class BasicTests(unittest.TestCase):
 #### tests ####
 ###############
 
-
     def test_main_page(self):
         response = self.app.get('/', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
     def test_notes(self):
         response = self.app.get(
-            '/notes', query_string=dict(keyword='The Apostolic Tradition of Hippolytus'))
+            '/notes',
+            query_string=dict(keyword='The Apostolic Tradition of Hippolytus'))
         self.assertEqual(response.status_code, 200)
 
     def test_add_note(self):
-        response = self.app.post(
-            '/add_note', data=dict(keyword='Test_Case',note="Test_Case_Note"))
+        response = self.app.post('/add_note',
+                                 json=dict(keyword='Test_Case',
+                                           note="Test_Case_Note"))
         self.assertEqual(response.status_code, 200)
-
 
 if __name__ == "__main__":
     unittest.main()

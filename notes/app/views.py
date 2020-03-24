@@ -23,7 +23,7 @@ def notes():
 
 @app.route('/add_note', methods=["POST"])
 def add_notes():
-    data = json.loads(request.data)
+    data = request.get_json()
     keyword = data["keyword"]
     note = data["note"]
     if not os.path.isdir('notes_stored'):
